@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="mx-auto mb-6 md:mb-12">
+      <div class="py-4 container mx-auto">
+        <img
+          class="w-28"
+          src="https://www.banbif.com.pe/Portals/0/home/personas/img/logo-header.png"
+          alt="logo-banbif"
+        />
+      </div>
+      <div class="bg-banbif-cyan text-white text-center py-7">
+        <div class="container">
+          <p class="text-white text-sm sm:text-base">CAMPAÑA RULETA GENIAL</p>
+          <p
+            class="text-white font-poppins font-bold text-xl sm:text-2xl md:text-3xl"
+          >
+            Gira la ruleta y obtén premios geniales
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Seccion Ruleta -->
+    <section class="container mb-24">
+      <div
+        class="grid grid-cols-1 md:grid-cols-10 lg:grid-cols-12 md:gap-10 items-center"
+      >
+        <div
+          class="md:col-start-6 md:col-end-11 md:row-start-1 lg:col-end-13 md:mb-4"
+        >
+          <img
+            id="ruleta"
+            class="max-w-[380px] md:max-w-[600px] block md:ml-auto md:mr-0 w-full mx-auto transition-transform duration-[3000ms] ease-[cubic-bezier(0.17, 0.67, 0.83, 0.67)]"
+            src="src/assets/img/ruleta/9_.svg"
+            alt="ruleta"
+          />
+          <img
+            id="premio"
+            class="max-w-[380px] md:max-w-[600px] mx-auto md:ml-auto md:mr-0 w-full hidden"
+            src="src/assets/img/ruleta.png"
+            alt="ruleta"
+          />
+        </div>
+        <div class="space-y-6 md:col-start-1 md:col-end-6 lg:col-end-6">
+          <h3
+            class="text-2xl text-banbif-text font-bold text-center md:text-left md:text-3xl"
+          >
+            Podrás ganar hasta un <br />
+            IPhone 16 Pro MAX
+          </h3>
+          <form
+            class="bg-white shadow-banbif-shadow p-6 rounded-banbif-radius space-y-6 md:py-12 md:px-12"
+          >
+            <p class="text-lg">Ingresa el código enviado por correo:</p>
+            <div class="relative">
+              <input
+                id="input-code"
+                class="w-full outline-none border border-banbif-border p-3 rounded-banbif-radius-sm relative cursor-text"
+                type="text"
+                placeholder=" "
+              />
+              <label
+                id="label-input"
+                class="absolute top-1/2 -translate-y-1/2 transition-all duration-200 left-3 text-banbif-text-low no-underline cursor-text py-1 px-2 bg-white"
+                for="input-code"
+                >Código</label
+              >
+            </div>
+            <img class="block mx-auto" src="src/assets/img/capcha.png" alt="" />
+            <input
+              id="input-submit"
+              class="text-white bg-banbif-button-gradient py-3 px-12 block mx-auto cursor-pointer rounded-banbif-radius-lg disabled:opacity-50 disabled:select-none disabled:cursor-default"
+              type="submit"
+              value="¡Gira ahora!"
+            />
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Participar -->
+    <section class="container mb-24">
+      <h3 class="text-banbif-text text-3xl text-center font-semibold mb-8">
+        ¿Cómo puedo participar de la Ruleta Genial?
+      </h3>
+      <div
+        class="flex flex-col items-center gap-12 justify-center md:gap-48 md:flex-row"
+      >
+        <div class="flex flex-col gap-4 items-center max-w-[240px] text-center">
+          <img src="src/assets/svg/ico-digital.svg" alt="icono" />
+          <p>Abre una Cuenta Sueldo Genial y recibe tu abono de haberes.</p>
+          <a
+            class="bg-banbif-button-gradient text-white py-3 px-12 rounded-banbif-radius-lg inline-flex"
+            href="#"
+            >Abrir aquí</a
+          >
+        </div>
+        <div class="flex flex-col gap-4 items-center max-w-[240px] text-center">
+          <img
+            src="src/assets/svg/ico-dolar_soles.svg"
+            alt="icono dolar soles"
+          />
+          <p>Abre una Cuenta Ahorro Genial con S/900 o US300.</p>
+          <a
+            class="bg-banbif-button-gradient text-white py-3 px-12 rounded-banbif-radius-lg inline-flex"
+            href="#"
+            >Abrir aquí</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Section ganador -->
+    <section class="container mb-24">
+      <h3 class="text-center text-3xl text-banbif-text mb-4">
+        Conoce a nuestro <strong>Ganador Genial <br /></strong> del mes de junio
+      </h3>
+      <div class="relative mb-4">
+        <!-- <img
+          class="max-w-[600px] w-full cursor-pointer rounded-lg absolute left-1/2 -translate-x-1/2 z-10 transition-opacity duration-300"
+          id="thumbnail-video"
+          src="src/assets/img/thumbnail.png"
+          alt="thumbnail ganador"
+        /> -->
+
+        <div class="video-container max-w-[600px] mx-auto shadow-banbif-shadow rounded-lg overflow-hidden relative">
+          <video
+            id="video-ganador"
+            class="absolute plyr block mx-auto bg-transparent object-cover w-full h-full left-0 right-0 top-0 bottom-0"
+            controls
+            poster="src/assets/img/thumbnail.png"
+          >
+            <source
+              src="src/assets/video/video-prueba.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center justify-center space-y-4">
+        <p
+          class="text-white bg-banbif-cyan text-center text-3xl p-5 rounded-lg inline-block font-bold"
+        >
+          ¡Tú puedes ser el siguiente ganador!
+        </p>
+        <p><strong>Fecha de Sorteo:</strong> 20/06/2024</p>
+      </div>
+    </section>
+
+    <!-- Section preguntas -->
+    <section class="container mb-12">
+      <h3 class="text-center text-banbif-text font-bold text-3xl mb-4 pb-8">
+        Preguntas frecuentes
+      </h3>
+      <div x-data="{ open1: false, open2: false, open3: false }">
+        <div>
+          <div class="w-full h-[1px] bg-gray-200"></div>
+          <button
+            @click="open1 = !open1"
+            class="w-full text-left py-6 rounded-lg font-poppins font-bold text-banbif-text text-lg"
+          >
+            <p>¿Quiénes pueden participar de la Ruleta Genial?</p>
+          </button>
+          <div
+            x-show="open1"
+            x-transition:enter="transition transform ease-out duration-300"
+            x-transition:enter-start="opacity-0 -translate-y-4"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition transform ease-in duration-200"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-4"
+            class="overflow-hidden space-y-2 pb-6"
+          >
+            <p>
+              Participan los titulares de las siguientes cuentas abiertas del
+              11.12.24  al 28.02.24: i) Cuenta Ahorro Genial con saldo de S/900
+              o US$300 al cierre del día de la apertura, o ii) Cuenta Sueldo
+              Genial con abono de haberes durante la vigencia.
+            </p>
+            <p>
+              También participan los clientes de Cuenta Ahorro Genial y Cuenta
+              Sueldo Genial que incrementen su saldo promedio mensual en S/900 o
+              US$300. El saldo incremental, es la diferencia entre el saldo
+              promedio al cierre del 30/11/24 versus el saldo promedio mensual
+              al cierre de cada mes (el saldo promedio mensual se calcula
+              sumando el saldo existente en la cuenta al cierre de cada día y
+              dividiendo la sumatoria entre el total de los días calendario que
+              tenga el mes).
+            </p>
+            <p>No participan cuentas mancomunadas.</p>
+          </div>
+        </div>
+        <div>
+          <div class="w-full h-[1px] bg-gray-200"></div>
+          <button
+            @click="open2 = !open2"
+            class="w-full text-left py-6 rounded-lg font-poppins font-bold text-banbif-text text-lg"
+          >
+            ¿Cuáles son los premios de la Ruleta?
+          </button>
+          <div
+            x-show="open2"
+            x-transition:enter="transition transform ease-out duration-300"
+            x-transition:enter-start="opacity-0 -translate-y-4"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition transform ease-in duration-200"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-4"
+            class="overflow-hidden space-y-2 pb-6"
+          >
+            <p>
+              Opciones para el Sorteo Genial, premios en efectivo y un iPhone 16
+              Pro Max de 128 GB.
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="w-full h-[1px] bg-gray-200"></div>
+          <button
+            @click="open3 = !open3"
+            class="w-full text-left py-6 rounded-lg font-poppins font-bold text-banbif-text text-lg"
+          >
+            ¿Cuáles son los premios de la Ruleta?
+          </button>
+          <div
+            x-show="open3"
+            x-transition:enter="transition transform ease-out duration-300"
+            x-transition:enter-start="opacity-0 -translate-y-4"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition transform ease-in duration-200"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-4"
+            class="overflow-hidden space-y-2 pb-6"
+          >
+            <p>
+              Los premios de opciones: Se sumarán al número de opciones
+              disponibles que el cliente tenga para el sorteo genial del mes en
+              el que va a participar, siempre que la Cuenta Genial esté activa y
+              genere opciones.
+            </p>
+            <p>
+              Los premios de dinero: Se abonarán a la cuenta que habilitó la
+              participación en la Ruleta Genial.
+            </p>
+            <p>
+              iPhone: La entrega es personal e intransferible y se realizará en
+              un plazo de 45 días hábiles desde el momento en que se ganó el
+              premio, en coordinación con el ganador. Posterior a dicho plazo,
+              el premio se perderá.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full h-[1px] bg-gray-200"></div>
+
+      <a class="underline block py-4 text-banbif-cyan" target="_blank" href="#"
+        >Términos y condiciones de la Campaña Ruleta Genial</a
+      >
+    </section>
+
+    <footer class="container">
+      <div class="h-[1px] w-full bg-banbif-text"></div>
+      <div class="py-7 flex items-center justify-between">
+        <img src="src/assets/img/footer-gray.png" alt="logo banbif" />
+        <p class="text-sm">
+          © 2024 BanBif - Todos los derechos reservados. Banco Interamericano de
+          Finanzas S.A. - RUC 20101036813
+        </p>
+        <div class="flex gap-3">
+          <a href="">
+            <img
+              width="30"
+              src="src/assets/img/logo-facebook.png"
+              alt="logo facebook"
+            />
+          </a>
+          <a href="">
+            <img
+              width="30"
+              src="src/assets/img/logo-twitter.png"
+              alt="logo twitter"
+            />
+          </a>
+          <a href="">
+            <img
+              width="30"
+              src="src/assets/img/logo-lin.png"
+              alt="logo linkedin"
+            />
+          </a>
+          <a href="">
+            <img
+              width="30"
+              src="src/assets/img/logo-instagram.png"
+              alt="logo instagram"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.2.2/dist/cdn.min.js"
+      defer
+    ></script>
+    <script  src="/src/main.js"></script>
+  </body>
+</html>

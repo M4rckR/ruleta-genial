@@ -1,0 +1,12 @@
+@import '../src/fonts.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply font-lato;
+}
+
+p {
+    @apply text-banbif-text 
+}
