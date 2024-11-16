@@ -1,12 +1,70 @@
-@import '../src/fonts.css';
+@import "../src/fonts.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-    @apply font-lato;
+  @apply font-lato;
 }
 
 p {
-    @apply text-banbif-text 
+  @apply text-banbif-text;
 }
+
+@keyframes girar-iphone {
+    0% {
+      transform: rotate(0deg); /* Empieza más lento */
+    }
+    100% {
+      transform: rotate(3600deg); /* Gira 10 veces */
+    }
+  }
+  
+.girar-iphone {
+  animation: girar-iphone 10s cubic-bezier(0.42, 0, 0.58, 1) forwards; /* Empieza más lento y termina más lento */
+}
+
+
+@keyframes girar-soles50 {
+    0% {
+      transform: rotate(0deg); 
+    }
+    100% {
+      transform: rotate(3915deg); 
+    }
+  }
+  
+.girar-soles50 {
+  animation: girar-soles50 10s cubic-bezier(0.42, 0, 0.58, 1) forwards; 
+}
+
+
+
+@keyframes girar-soles100 {
+    0% {
+      transform: rotate(0deg); 
+    }
+    100% {
+      transform: rotate(3870deg); 
+    }
+  }
+  
+.girar-soles100 {
+  animation: girar-soles100 10s cubic-bezier(0.42, 0, 0.58, 1) forwards; 
+}
+
+
+@keyframes girar-100opc {
+    0% {
+      transform: rotate(0deg); 
+    }
+    100% {
+      transform: rotate(3825deg); 
+    }
+  }
+  
+.girar-100opc {
+  animation: girar-100opc 10s cubic-bezier(0.42, 0, 0.58, 1) forwards; 
+}
+
+

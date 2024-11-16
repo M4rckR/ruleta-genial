@@ -2,42 +2,39 @@ document.addEventListener('DOMContentLoaded', function() {
     const inputCode = document.querySelector('#input-code'); 
     const labelInput = document.querySelector('#label-input');
     const inputSubmit = document.querySelector('#input-submit');
+    const ruleta = document.getElementById('ruleta');
     // const thumbnailVideo = document.querySelector('#thumbnail-video');
     // const video = document.querySelector('#video-ganador');
+
+
     const player = new Plyr('#video-ganador', {
         fluid: true,
         ratio: '16:9',
 
         speed: {
             options: [0.5, 1, 1.5, 2]
+
         }
     });
-      
-      function mostrarPremio() {
-        const segmentoGanador = ruleta.getIndicatedSegment();
-        const premio = premiosConfig.find(p => p.text === segmentoGanador.text);
-        const premioImg = document.getElementById('premio');
-        premioImg.src = premio.premio;
-        premioImg.classList.remove('hidden');
-      }
-      
-      document.getElementById('form-ruleta').addEventListener('submit', function(e) {
-        e.preventDefault();
-        ruleta.startAnimation();
-      });
+
+    const premiosPosible = {
+        iphone: 'girar-iphone',
+        soles50: 'girar-soles50',
+        soles100: 'girar-soles100',
+        opc100: 'girar-100opc',
+    }
 
     inputSubmit.addEventListener('click', function(e) {
+        e.preventDefault();
+        const {iphone, soles50, soles100, opc100} = premiosPosible;
+
         if(inputCode.value.trim() !== '') {
-            console.log('hola');
-        }else {
-            console.log('adios');
+            ruleta.classList.add(`${opc100}`); 
         }
     })
 
 
-
-    
-    
+        
 
 
 
