@@ -11,9 +11,25 @@ p {
   @apply text-banbif-text;
 }
 
+#indicador-ruleta {
+  animation: mover-indicador 10s forwards;
+  transform-origin: center;
+}
+
+.mover-indicador {
+  animation: mover-indicador 10s cubic-bezier(0.42, 0, 0.58, 1)  forwards;
+}
+
 @keyframes girar-iphone {
     0% {
       transform: rotate(0deg); /* Empieza más lento */
+    }
+    /* 20% { 
+      @apply blur-[1px]
+    } */
+    95% {
+      transform: rotate(3615deg);; /* Gira 10 veces */
+      /* @apply blur-[1px] */
     }
     100% {
       transform: rotate(3600deg); /* Gira 10 veces */
@@ -65,6 +81,64 @@ p {
   
 .girar-100opc {
   animation: girar-100opc 10s cubic-bezier(0.42, 0, 0.58, 1) forwards; 
+}
+
+
+@keyframes girar-500opc {
+    0% {
+      transform: rotate(0deg); 
+    }
+    100% {
+      transform: rotate(3780deg); 
+    }
+  }
+  
+.girar-500opc {
+  animation: girar-500opc 10s cubic-bezier(0.42, 0, 0.58, 1) forwards; 
+}
+
+
+
+@keyframes girar-200opc {
+    0% {
+      transform: rotate(0deg); 
+    }
+    100% {
+      transform: rotate(3735deg); 
+    }
+  }
+  
+.girar-200opc {
+  animation: girar-200opc 10s cubic-bezier(0.42, 0, 0.58, 1) forwards; 
+}
+
+
+
+@keyframes girar-1000opc {
+    0% {
+      transform: rotate(0deg); 
+    }
+    100% {
+      transform: rotate(3690deg); 
+    }
+  }
+  
+.girar-1000opc {
+  animation: girar-1000opc 10s cubic-bezier(0.42, 0, 0.58, 1) forwards; 
+}
+
+
+@keyframes girar-soles20 {
+    0% {
+      transform: rotate(0deg); 
+    }
+    100% {
+      transform: rotate(3645deg); 
+    }
+  }
+  
+.girar-soles20 {
+  animation: girar-soles20 10s cubic-bezier(0.42, 0, 0.58, 1) forwards; 
 }
 
 
