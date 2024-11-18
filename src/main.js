@@ -63,6 +63,10 @@ document.addEventListener('DOMContentLoaded', function() {
     closeModal.addEventListener('click', function() {
         modal.classList.add('opacity-0', 'invisible');
         modal.classList.remove('opacity-100', 'visible');
+
+        setTimeout(() => {  
+            location.reload();
+        }, 1000);
     });
 
 
