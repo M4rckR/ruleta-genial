@@ -4,34 +4,43 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Campaña Ruleta Genial</title>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
     <link rel="stylesheet" href="src/style.css" />
   </head>
-  <body class="overflow-x-hidden  ">
-    <button id="confettiButton">¡Lanzar Confeti!</button>
+  <body class="overflow-x-hidden relative">
 
-    <div class="absolute left-0 right-0 top-0 bottom-0 bg-red-200 z-20">
-      <div class="hola container max-w-[360px] bg-white shadow-banbif-shadow left-1/2 -translate-x-1/2 top-60 z-10 text-center py-8 rounded-banbif-radius-sm space-y-4 overflow-hidden">
-        <canvas id="confettiCanvas" class="absolute top-0 left-0 w-full h-full pointer-events-none"></canvas>
-        <img class="mx-auto" src="src/assets/img/premio-ganador-icon.png" width="80" alt="icono premio">
-        <h4 class="text-3xl text-banbif-cyan font-bold">¡Felicidades!</h4>
-        <p class="text-xl">Ganaste <span class="font-semibold">100 opciones geniales</span> </p>
-        <p class="text-banbif-text-low">Tienes 100 oportunidades más para ganar el Sorteo Genial. <br> Te enviaremos un correo detallando el premio.</p>
+    <div id="modal-premio" class="fixed inset-0 left-0 right-0 top-0 bottom-0 bg-[#202020B5] z-30  transition-all duration-300 opacity-0 invisible">
+      <div class="confeti-modal absolute container max-w-[400px] bg-white shadow-banbif-shadow left-1/2 -translate-x-1/2 top-60 z-10 text-center py-12 rounded-banbif-radius-sm overflow-hidden opacity-100 px-8">
+        
+        <canvas id="confettiCanvas" class="absolute left-0 right-0 w-full h-full top-0 rounded-banbif-radius-lg  pointer-events-none">   
+           
+        </canvas>
+        <img id="close-modal" class="absolute right-6 top-6 cursor-pointer" src="src/assets/img/close-icon.svg" alt="icon close modal">
+        <img class="mx-auto pb-4" src="src/assets/img/premio-ganador-icon.png" width="80" alt="icono premio">
+        <h4 class="text-3xl text-banbif-cyan font-bold pb-2">¡Felicidades!</h4>
+        <p class="text-xl pb-4">Ganaste <span id="title-premio-modal" class="font-semibold"></span> </p>
+        <p id="description-premio-modal" class="text-banbif-text-low"></p>
+        <p  class="text-banbif-text-low">Te enviaremos un correo detallando el premio.</p>
+        
       </div>
     </div>
 
     <!-- Header -->
     <header class="mx-auto mb-6 md:mb-12">
-      <div class="py-4 container mx-auto">
-        <img
-          class="w-28"
-          src="https://www.banbif.com.pe/Portals/0/home/personas/img/logo-header.png"
-          alt="logo-banbif"
-        />
-      </div>
-      <div class="bg-banbif-cyan text-white text-center py-7">
+      <div class="fixed bg-white left-0 right-0 top-0 py-4 mx-auto shadow-banbif-shadow z-20">
         <div class="container">
+          <a class="inline-flex" href="https://www.banbif.com.pe/Personas" target="_blank">
+            <img
+              class="w-28"
+              src="https://www.banbif.com.pe/Portals/0/home/personas/img/logo-header.png"
+              alt="logo-banbif"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="bg-banbif-cyan text-white text-center py-7 mt-16">
+        <div class="container space-y-1.5">
           <p class="text-white text-sm sm:text-base">CAMPAÑA RULETA GENIAL</p>
           <p
             class="text-white font-poppins font-bold text-xl sm:text-2xl md:text-3xl"
@@ -344,7 +353,7 @@
             IPhone 16 Pro MAX
           </h3>
           <form
-            class="bg-white shadow-banbif-shadow p-6 rounded-banbif-radius space-y-6 md:py-12 md:px-12"
+            class="bg-white shadow-banbif-shadow p-10 rounded-banbif-radius space-y-6 md:py-12 md:px-12"
           >
             <p class="text-lg">Ingresa el código enviado por correo:</p>
             <div class="relative">
@@ -407,7 +416,7 @@
 
     <!-- Section ganador -->
     <section class="container mb-24">
-      <h3 class="text-center text-3xl text-banbif-text mb-4">
+      <h3 class="text-center text-2xl md:text-3xl  text-banbif-text mb-4">
         Conoce a nuestro <strong>Ganador Genial <br /></strong> del mes de junio
       </h3>
       <div class="relative mb-4">
@@ -435,7 +444,7 @@
 
       <div class="flex flex-col items-center justify-center space-y-4">
         <p
-          class="text-white bg-banbif-cyan text-center text-3xl p-5 rounded-lg inline-block font-bold"
+          class="text-white bg-banbif-cyan text-center text-2xl md:text-3xl p-5 rounded-lg inline-block font-bold"
         >
           ¡Tú puedes ser el siguiente ganador!
         </p>
@@ -445,7 +454,7 @@
 
     <!-- Section preguntas -->
     <section class="container mb-12">
-      <h3 class="text-center text-banbif-text font-bold text-3xl mb-4 pb-8">
+      <h3 class="text-center text-banbif-text font-bold text-2xl md:text-3xl mb-2 md:mb-4 pb-8">
         Preguntas frecuentes
       </h3>
       <div x-data="{ open1: false, open2: false, open3: false }">
@@ -453,7 +462,7 @@
           <div class="w-full h-[1px] bg-gray-200"></div>
           <button
             @click="open1 = !open1"
-            class="w-full text-left py-6 rounded-lg font-poppins font-bold text-banbif-text text-lg"
+            class="w-full text-left py-6 rounded-lg font-poppins font-bold text-banbif-text text-base md:text-lg"
           >
             <p>¿Quiénes pueden participar de la Ruleta Genial?</p>
           </button>
@@ -490,7 +499,7 @@
           <div class="w-full h-[1px] bg-gray-200"></div>
           <button
             @click="open2 = !open2"
-            class="w-full text-left py-6 rounded-lg font-poppins font-bold text-banbif-text text-lg"
+            class="w-full text-left py-6 rounded-lg font-poppins font-bold text-banbif-text text-base md:text-lg"
           >
             ¿Cuáles son los premios de la Ruleta?
           </button>
@@ -514,7 +523,7 @@
           <div class="w-full h-[1px] bg-gray-200"></div>
           <button
             @click="open3 = !open3"
-            class="w-full text-left py-6 rounded-lg font-poppins font-bold text-banbif-text text-lg"
+            class="w-full text-left py-6 rounded-lg font-poppins font-bold text-banbif-text text-base md:text-lg"
           >
             ¿Cuáles son los premios de la Ruleta?
           </button>
@@ -557,35 +566,37 @@
 
     <footer class="container">
       <div class="h-[1px] w-full bg-banbif-text"></div>
-      <div class="py-7 flex items-center justify-between">
-        <img src="src/assets/img/footer-gray.png" alt="logo banbif" />
-        <p class="text-sm">
+      <div class="py-7 flex flex-col lg:flex-row gap-4 lg:gap-0 items-center justify-between">
+        <a class="hidden lg:flex" href="https://www.banbif.com.pe/Personas" target="_blank">
+          <img src="src/assets/img/footer-gray.png" alt="logo banbif" />
+        </a>
+        <p class="text-sm text-center order-1 lg:order-none">
           © 2024 BanBif - Todos los derechos reservados. Banco Interamericano de
           Finanzas S.A. - RUC 20101036813
         </p>
         <div class="flex gap-3">
-          <a href="">
+          <a href="https://www.facebook.com/banbif" target="_blank">
             <img
               width="30"
               src="src/assets/img/logo-facebook.png"
               alt="logo facebook"
             />
           </a>
-          <a href="">
+          <a href="https://twitter.com/BanBif" target="_blank">
             <img
               width="30"
               src="src/assets/img/logo-twitter.png"
               alt="logo twitter"
             />
           </a>
-          <a href="">
+          <a href="https://www.linkedin.com/company/banbif/" target="_blank">
             <img
               width="30"
               src="src/assets/img/logo-lin.png"
               alt="logo linkedin"
             />
           </a>
-          <a href="">
+          <a href="https://www.instagram.com/banbifperu/" target="_blank">
             <img
               width="30"
               src="src/assets/img/logo-instagram.png"

@@ -1,23 +1,28 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+    // Input para el código
     const inputCode = document.querySelector('#input-code'); 
+
+    // Label del input
     const labelInput = document.querySelector('#label-input');
+
+    // Botón para enviar el código
     const inputSubmit = document.querySelector('#input-submit');
+
+    // Ruleta
     const ruleta = document.getElementById('ruleta');
 
-    const prueba = document.querySelector('.prueba-svg');
-    
+    // Título del premio
+    const titlePremio = document.getElementById('title-premio-modal');
 
+    // Descripción del premio
+    const descPremio = document.getElementById('description-premio-modal');
 
+    // Botón para cerrar el modal
+    const closeModal = document.getElementById('close-modal');
 
-    const player = new Plyr('#video-ganador', {
-        fluid: true,
-        ratio: '16:9',
-
-        speed: {
-            options: [0.5, 1, 1.5, 2]
-
-        }
-    });
+    // Modal del premio
+    const modal = document.getElementById('modal-premio');
 
 
     const campoPremios = {
@@ -42,60 +47,153 @@ document.addEventListener('DOMContentLoaded', function() {
         soles20: 'girar-soles20',
     }
 
+
+    const player = new Plyr('#video-ganador', {
+        fluid: true,
+        ratio: '16:9',
+
+        speed: {
+            options: [0.5, 1, 1.5, 2]
+
+        }
+    });
+    let premio = 8;
+
+
+    closeModal.addEventListener('click', function() {
+        modal.classList.add('opacity-0', 'invisible');
+        modal.classList.remove('opacity-100', 'visible');
+    });
+
+
+
+
     inputSubmit.addEventListener('click', function(e) {
         e.preventDefault();
-        const { 
-            iphone, 
-            soles50, 
-            soles100, 
-            opc100, 
-            opc500, 
-            opc200,
-            opc1000,
-            soles20
-
-        } = premiosPosible;
 
         if(inputCode.value.trim() !== '') {
-            ruleta.classList.add(`${iphone}`); 
+            switch (premio) {
+                case 1:         
+                ruleta.classList.add(`${premiosPosible.iphone}`); 
+
+                setTimeout(() => {
+                    document.querySelector(`.${campoPremios.iphone}`).classList.remove('cls-11')
+                    document.querySelector(`.${campoPremios.iphone}`).classList.add('bg-premio')
+                    titlePremio.innerHTML = '1 iPhone 16 Pro Max';
+                    descPremio.classList.add('hidden')                        
+                }, 10000);break;
+                
+                case 2: 
+                ruleta.classList.add(`${premiosPosible.soles50}`); 
+                setTimeout(() => {
+                    document.querySelector(`.${campoPremios.soles50}`).classList.remove('cls-11')
+                    document.querySelector(`.${campoPremios.soles50}`).classList.add('bg-premio')
+                    titlePremio.innerHTML = '50 Soles';
+                    descPremio.classList.add('hidden')
+                }, 10000);break;
+
+                
+                case 3: 
+                ruleta.classList.add(`${premiosPosible.soles100}`); 
+                setTimeout(() => {
+                    document.querySelector(`.${campoPremios.soles100}`).classList.remove('cls-11')
+                    document.querySelector(`.${campoPremios.soles100}`).classList.add('bg-premio')
+                    titlePremio.innerHTML = '100 Soles';
+                    descPremio.classList.add('hidden')
+                }, 10000);break;
+
+                case 4: 
+                ruleta.classList.add(`${premiosPosible.opc100}`); 
+                setTimeout(() => {
+                    document.querySelector(`.${campoPremios.opc100}`).classList.remove('cls-11')
+                    document.querySelector(`.${campoPremios.opc100}`).classList.add('bg-premio')
+                    titlePremio.innerHTML = '100 opciones geniales';
+                    descPremio.innerHTML = 'Tienes 100 oportunidades más para ganar el Sorteo Genial.';
+                }, 10000);break;
+
+                case 5: 
+                ruleta.classList.add(`${premiosPosible.opc500}`); 
+                setTimeout(() => {
+                    document.querySelector(`.${campoPremios.opc500}`).classList.remove('cls-11')
+                    document.querySelector(`.${campoPremios.opc500}`).classList.add('bg-premio')
+                    titlePremio.innerHTML = '500 opciones geniales';
+                    descPremio.innerHTML = 'Tienes 500 oportunidades más para ganar el Sorteo Genial. ';
+                }, 10000);break;
+
+                case 6: 
+                ruleta.classList.add(`${premiosPosible.opc200}`); 
+                setTimeout(() => {
+                    document.querySelector(`.${campoPremios.opc200}`).classList.remove('cls-11')
+                    document.querySelector(`.${campoPremios.opc200}`).classList.add('bg-premio')
+                    titlePremio.innerHTML = '200 opciones geniales';
+                    descPremio.innerHTML = 'Tienes 200 oportunidades más para ganar el Sorteo Genial. ';
+                }, 10000);break;
+
+                case 7: 
+                ruleta.classList.add(`${premiosPosible.opc1000}`); 
+                setTimeout(() => {
+                    document.querySelector(`.${campoPremios.opc1000}`).classList.remove('cls-11')
+                    document.querySelector(`.${campoPremios.opc1000}`).classList.add('bg-premio')
+                    titlePremio.innerHTML = '1000 opciones geniales';
+                    descPremio.innerHTML = 'Tienes 1000 oportunidades más para ganar el Sorteo Genial. ';
+                }, 10000);break;
+
+
+                case 8: 
+                ruleta.classList.add(`${premiosPosible.soles20}`); 
+                setTimeout(() => {
+                    document.querySelector(`.${campoPremios.soles20}`).classList.remove('cls-11')
+                    document.querySelector(`.${campoPremios.soles20}`).classList.add('bg-premio')
+                    titlePremio.innerHTML = '20 Soles';
+                    descPremio.classList.add('hidden')
+                }, 10000);break;
+
+            }
+
+
+            
         }
 
+
+
+
         setTimeout(() => {
-            document.querySelector(`.${campoPremios.iphone}`).classList.remove('cls-11')
-            document.querySelector(`.${campoPremios.iphone}`).classList.add('bg-premio')
-        }, 10000);
+
+            modal.classList.remove('opacity-0', 'invisible');
+
+
+            // Obtener el canvas dentro del card
+            const canvas = document.getElementById('confettiCanvas');
+            const card = document.querySelector('.confeti-modal');
+        
+            // Configurar el tamaño del canvas para que coincida con el card
+            canvas.width = card.offsetWidth;
+            canvas.height = card.offsetHeight;
+        
+            // Crear un contexto específico para el canvas
+            const confettiCtx = confetti.create(canvas, { resize: false });
+        
+            // Generar confeti dentro del card
+            confettiCtx({
+            particleCount: 150, // Número de partículas
+            spread: 70, // Ángulo de dispersión
+            startVelocity: 30, // Velocidad inicial
+            gravity: 0.4, // Gravedad para caída más lenta
+            origin: {
+                x: 0.5, // Centro horizontal
+                y: 0.5, // Centro vertical dentro del card
+            },
+            colors: ['#AD96DC', '#20A6FF', '#C4D600', '#E4A9BB'], // Colores personalizados
+            scalar: 1.2, // Tamaño de las partículas
+            });
+        
+            // Opcional: Limpiar el canvas después de unos segundos
+            setTimeout(() => confettiCtx.reset(), 5000); // Detener confeti después de 5 segundos
+        }, 11000);
 
     })
 
-    document.getElementById('confettiButton').addEventListener('click', function () {
-        // Obtener el canvas dentro del card
-        const canvas = document.getElementById('confettiCanvas');
-        const card = document.querySelector('.hola');
-      
-        // Configurar el tamaño del canvas para que coincida con el card
-        canvas.width = card.offsetWidth;
-        canvas.height = card.offsetHeight;
-      
-        // Crear un contexto específico para el canvas
-        const confettiCtx = confetti.create(canvas, { resize: false });
-      
-        // Generar confeti dentro del card
-        confettiCtx({
-          particleCount: 150, // Número de partículas
-          spread: 70, // Ángulo de dispersión
-          startVelocity: 30, // Velocidad inicial
-          gravity: 0.4, // Gravedad para caída más lenta
-          origin: {
-            x: 0.5, // Centro horizontal
-            y: 0.5, // Centro vertical dentro del card
-          },
-          colors: ['#FF5733', '#33FF57', '#3357FF', '#F1C40F', '#8E44AD'], // Colores personalizados
-          scalar: 1.2, // Tamaño de las partículas
-        });
-      
-        // Opcional: Limpiar el canvas después de unos segundos
-        setTimeout(() => confettiCtx.reset(), 5000); // Detener confeti después de 5 segundos
-      });
+
         
 
 

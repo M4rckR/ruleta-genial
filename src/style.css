@@ -24,12 +24,8 @@ p {
     0% {
       transform: rotate(0deg); /* Empieza más lento */
     }
-    /* 20% { 
-      @apply blur-[1px]
-    } */
     95% {
       transform: rotate(3615deg);; /* Gira 10 veces */
-      /* @apply blur-[1px] */
     }
     100% {
       transform: rotate(3600deg); /* Gira 10 veces */
@@ -44,6 +40,9 @@ p {
 @keyframes girar-soles50 {
     0% {
       transform: rotate(0deg); 
+    }
+    95% {
+      transform: rotate(3930deg);; /* Gira 10 veces */
     }
     100% {
       transform: rotate(3915deg); 
@@ -60,6 +59,9 @@ p {
     0% {
       transform: rotate(0deg); 
     }
+    95% {
+      transform: rotate(3885deg);; /* Gira 10 veces */
+    }
     100% {
       transform: rotate(3870deg); 
     }
@@ -74,6 +76,9 @@ p {
     0% {
       transform: rotate(0deg); 
     }
+    95% {
+      transform: rotate(3840deg);; /* Gira 10 veces */
+    }
     100% {
       transform: rotate(3825deg); 
     }
@@ -87,6 +92,9 @@ p {
 @keyframes girar-500opc {
     0% {
       transform: rotate(0deg); 
+    }
+    95% {
+      transform: rotate(3795deg);; /* Gira 10 veces */
     }
     100% {
       transform: rotate(3780deg); 
@@ -103,6 +111,9 @@ p {
     0% {
       transform: rotate(0deg); 
     }
+    95% {
+      transform: rotate(3750deg); /* Gira 10 veces */
+    }
     100% {
       transform: rotate(3735deg); 
     }
@@ -118,6 +129,9 @@ p {
     0% {
       transform: rotate(0deg); 
     }
+    95% {
+      transform: rotate(3705deg);; /* Gira 10 veces */
+    }
     100% {
       transform: rotate(3690deg); 
     }
@@ -131,6 +145,9 @@ p {
 @keyframes girar-soles20 {
     0% {
       transform: rotate(0deg); 
+    }
+    95% {
+      transform: rotate(3660deg);; /* Gira 10 veces */
     }
     100% {
       transform: rotate(3645deg); 
