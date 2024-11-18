@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         }
     });
-    let premio = 8;
+    let premio = 4;
 
 
     closeModal.addEventListener('click', function() {

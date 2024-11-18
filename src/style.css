@@ -146,7 +146,7 @@ p {
     0% {
       transform: rotate(0deg); 
     }
-    60% {
+    80% {
       transform: rotate(3660deg);
     }
     95% {
