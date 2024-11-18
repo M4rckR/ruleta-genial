@@ -76,8 +76,11 @@ p {
     0% {
       transform: rotate(0deg); 
     }
+    80% {
+      transform: rotate(3840deg); 
+    }
     95% {
-      transform: rotate(3840deg);; /* Gira 10 veces */
+      transform: rotate(3815deg); /* Gira 10 veces */
     }
     100% {
       transform: rotate(3825deg); 
