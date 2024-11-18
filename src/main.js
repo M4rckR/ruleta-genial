@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.querySelector(`.${campoPremios.iphone}`).classList.remove('cls-11')
                     document.querySelector(`.${campoPremios.iphone}`).classList.add('bg-premio')
                     titlePremio.innerHTML = '1 iPhone 16 Pro Max';
-                    descPremio.classList.add('hidden')                        
+                    descPremio.innerHTML = '¡Felicidades! Ganaste un iPhone 16 Pro Max de 128 GB';                       
                 }, 10000);break;
                 
                 case 2: 
