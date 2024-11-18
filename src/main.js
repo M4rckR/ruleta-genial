@@ -71,6 +71,11 @@ document.addEventListener('DOMContentLoaded', function() {
     inputSubmit.addEventListener('click', function(e) {
         e.preventDefault();
 
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' 
+        });
+
         if(inputCode.value.trim() !== '') {
             switch (premio) {
                 case 1:         
